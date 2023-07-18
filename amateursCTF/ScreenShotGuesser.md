@@ -1,10 +1,10 @@
-##Name: Sen0rC4
-##Challenge Name: ScreenshotGuesser
-##Category: OSINT
-##Points: 454**
+## Name: Sen0rC4
+## Challenge Name: ScreenshotGuesser
+## Category: OSINT
+## Points: 454**
 
 
-##Challenge:
+## Challenge:
 
 I screenshotted a list of wifi networks on vacation but forgot where I was at.
 To check your coordinates use the provided server (pass in format x, y, example: 123.456789, -123.456789).
@@ -12,7 +12,7 @@ To check your coordinates use the provided server (pass in format x, y, example:
 You should be able to solve this in a manageable amount of guesses.
 nc amt.rs 31450
 
-##Approach:
+## Approach:
 
 I first looked at the most unique BSSIDs. This usually will be the longest network name, in this case “PRIMAVERA FOUNDATION 5G_2.4GEXT”. 
 
