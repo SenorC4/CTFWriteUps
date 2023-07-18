@@ -18,9 +18,13 @@ nc amt.rs 31450
 **Approach:** 
 
 I first looked at the most unique BSSIDs. This usually will be the longest network name, in this case “PRIMAVERA FOUNDATION 5G_2.4GEXT”. 
+
 I found that Primavera Foundation is only in Tucson, AZ.
+
 I used Wigle.net to get the longitude and latitude of all PRIMAVERA networks
+
 In the same map view of PRIMAERA, I then used the strongest signal wireless network to find a more accurate coordinate to submit, for this I used the CenturyLink network.
+
 I then computed the proof of work and the coordinates and received the flag.
 
 
