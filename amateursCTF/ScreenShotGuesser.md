@@ -1,7 +1,7 @@
-** Name: Sen0rC4
+**Name: Sen0rC4
  Challenge Name: ScreenshotGuesser
  Category: OSINT
- Points: 454 **
+ Points: 454**
 
 
 ## Challenge:
