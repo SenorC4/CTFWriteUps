@@ -21,7 +21,7 @@ Note: you do not need minecraft to solve this challenge. Maybe reference the min
 3. Find and download *NBT Explorer* (https://github.com/jaquadro/NBTExplorer/tree/v2.8.0-win)
 4. Open the four region files with NBT Explorer
 5. Use *find* on each mca file looking for flag format “amateursCTF{”
-6. Flag: ==amateursCTF{cow_wear_thing_lmao_0f9183ca}==
+6. Flag: `amateursCTF{cow_wear_thing_lmao_0f9183ca}`
 
    
 
