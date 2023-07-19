@@ -1,0 +1,30 @@
+**Name: Sen0rC4**
+
+**Challenge Name: Painfully Deep Flag**
+
+**Category: Forensics**
+
+**Points: 469**
+
+
+
+## Challenge:
+
+This one is a bit deep in the stack.
+
+## Approach:
+
+1. Use exiftool to see that the file was created with libreOffice
+
+2. Open with LibreOffice to see invisible layer 
+
+3. Layer has an image that has the flag
+
+
+
+
+
+
+
+
+
