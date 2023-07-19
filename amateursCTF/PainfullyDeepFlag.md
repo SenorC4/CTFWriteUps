@@ -18,7 +18,9 @@ This one is a bit deep in the stack.
 
 2. Open with LibreOffice to see invisible layer 
 
-3. Layer has an image that has the flag
+3. Layer contains an image that contains the flag in plain text
+
+4. Flag: `amateursCTF{0ut_0_b0unds}`
 
 
 
