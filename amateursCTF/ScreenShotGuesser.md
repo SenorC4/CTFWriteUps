@@ -15,6 +15,7 @@ To check your coordinates use the provided server (pass in format x, y, example:
 "try to look at the direction ish in which stuff becomes more clustered" - author, note: we relaxed the coordinate precision as an update.
 You should be able to solve this in a manageable amount of guesses.
 nc amt.rs 31450
+[screenshot.png](files/screenshot.png)
 
 ## Approach:
 
