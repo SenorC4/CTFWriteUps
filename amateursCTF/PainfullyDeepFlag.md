@@ -14,11 +14,13 @@ This one is a bit deep in the stack.
 
 ## Approach:
 
-1. Use exiftool to see that the file was created with libreOffice
+1. Use exiftool to see that the file was created using libreOffice
 
 2. Open with LibreOffice to see invisible layer 
 
-3. Layer has an image that has the flag
+3. Layer contains an image that contains the flag in plain text
+
+4. Flag: `amateursCTF{0ut_0_b0unds}`
 
 
 
