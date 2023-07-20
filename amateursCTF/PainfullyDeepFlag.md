@@ -14,7 +14,7 @@ This one is a bit deep in the stack.
 
 ## Approach:
 
-1. Use exiftool to see that the file was created with libreOffice
+1. Use exiftool to see that the file was created using libreOffice
 
 2. Open with LibreOffice to see invisible layer 
 
