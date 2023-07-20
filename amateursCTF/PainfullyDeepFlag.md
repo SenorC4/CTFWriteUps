@@ -18,7 +18,7 @@ This one is a bit deep in the stack.
 
 1. Use exiftool to see that the file was created using libreOffice
 
-2. Open with LibreOffice to see invisible layer 
+2. Open with LibreOffice and zoom out to see invisible layer 
 
 3. Layer contains an image that contains the flag in plain text
 
