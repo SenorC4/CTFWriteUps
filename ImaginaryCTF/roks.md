@@ -19,7 +19,7 @@ When going to the site you are greeted by a button that picks a random picture o
 
 If you intercept the request with burp, we see it uses ==file== inclusion. So I am thinking path traversal.
 
-`GET /file.php?file=image4 HTTP/1.1
+```GET /file.php?file=image4 HTTP/1.1
 Host: roks.chal.imaginaryctf.org
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0
 Accept: */*
@@ -27,7 +27,8 @@ Accept-Language: en-US,en;q=0.5
 Accept-Encoding: gzip, deflate
 Connection: close
 Referer: http://roks.chal.imaginaryctf.org/
-Cookie: _ga_0LKSSBL38W=GS1.1.1690084714.5.1.1690084784.0.0.0; _ga=GA1.1.865862315.1690061016; _ga_BHMLHVLGF2=GS1.1.1690079570.3.0.1690079574.0.0.0`
+Cookie: _ga_0LKSSBL38W=GS1.1.1690084714.5.1.1690084784.0.0.0; _ga=GA1.1.865862315.1690061016; _ga_BHMLHVLGF2=GS1.1.1690079570.3.0.1690079574.0.0.0
+```
 
 However, when we try to path traverse we recieve the ==stop hacking you hackers== image.
 
@@ -36,7 +37,7 @@ However, when we try to path traverse we recieve the ==stop hacking you hackers=
 Lets take a look at the provided source code:
 
 
-`<?php
+```<?php
   $filename = urldecode($_GET["file"]);
   if (str_contains($filename, "/") or str_contains($filename, ".")) {
     $contentType = mime_content_type("stopHacking.png");
@@ -48,7 +49,8 @@ Lets take a look at the provided source code:
     header("Content-type: $contentType");
     readfile($filePath);
   }
-?>`
+?>
+```
 
 Website dosent allow "." or "/"
 
