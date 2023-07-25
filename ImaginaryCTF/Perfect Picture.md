@@ -1,16 +1,25 @@
+**Name: Sen0rC4**
 
-Perfect Picture (100pts) - 274 solves
-by FIREPONY57
-Description
+**Challenge Name: Perfect Picture**
+
+**Category: Web**
+
+**Points: 100**
+
+## Challenge:
 
 Someone seems awful particular about where their pixels go...
 Attachments
 
-https://imaginaryctf.org/r/Gdmod#perfect_picture.zip http://perfect-picture.chal.imaginaryctf.org
+[perfect_picture.zip](files/picture_perfect.zip)
 
-requirements for file upload:
+## Approach:
 
-def check(uploaded_image):
+Looking at the website it is a simple site asking for an image upload.
+
+Since we have source, lets take a look at the provided python code.
+
+```def check(uploaded_image):
     with open('flag.txt', 'r') as f:
         flag = f.read()
     with Image.open(app.config['UPLOAD_FOLDER'] + uploaded_image) as image:
@@ -39,11 +48,13 @@ def check(uploaded_image):
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
+```
 
 We need specific pixels to have specific values and metadata fields must have specific strings and it must be a png
 
+Using the PIL library in python I wrote this script that crafts the *perfect* picture.
 
-from PIL import Image, PngImagePlugin
+```from PIL import Image, PngImagePlugin
 
 def create_png_with_metadata(filename, width, height):
     # Create a new image with the specified width and height
@@ -70,10 +81,12 @@ def create_png_with_metadata(filename, width, height):
 
 if __name__ == "__main__":
     create_png_with_metadata("C:/Users/lukel/Downloads/29999.png", 690, 420)
-
+```
 
 My python script meets all of the requirements and gets the flag!
 
+Here's the png that it created: [29999.png](files/29999.png)
+
 now that's the perfect picture:
 
-flag: ictf{7ruly_th3_n3x7_p1c4ss0_753433} 
+flag: `ictf{7ruly_th3_n3x7_p1c4ss0_753433}`

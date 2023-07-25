@@ -17,7 +17,7 @@ Attachments
 
 When going to the site you are greeted by a button that picks a random picture of a rock.
 
-If you intercept the request with burp, we see it uses ==file== inclusion. So I am thinking path traversal.
+If you intercept the request with burp, we see it uses *file* inclusion. So I am thinking path traversal.
 
 ```GET /file.php?file=image4 HTTP/1.1
 Host: roks.chal.imaginaryctf.org
